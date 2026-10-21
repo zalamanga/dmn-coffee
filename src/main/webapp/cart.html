@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your cart | DMN Coffeeshop</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer></script>
+    <script src="js/cart.js" defer></script>
+</head>
+<body>
+    <header><h1>Your cart</h1><p class="table-number"></p></header>
+    <main>
+        <section>
+            <h2>Review your items</h2>
+            <p class="demo-note">Demo only. Continue to a rating on this browser; no order or payment is sent.</p>
+            <p id="storage-error" role="alert" hidden></p>
+            <p id="feedback" role="status" aria-live="polite"></p>
+            <div id="cart-items"></div>
+            <p id="total-price" aria-live="polite"></p>
+            <div class="actions">
+                <button id="checkout-button" type="button" disabled>Continue to rating</button>
+                <a class="button secondary" id="continue-ordering" href="index.html">Continue ordering</a>
+            </div>
+        </section>
+    </main>
+    <footer><p>&copy; 2024 Nugi Nugroho. DMN Coffeeshop project.</p></footer>
+</body>
+</html>

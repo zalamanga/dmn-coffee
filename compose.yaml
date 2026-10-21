@@ -1,0 +1,31 @@
+services:
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:${APP_PORT:-18092}:8080"
+    environment:
+      DB_URL: jdbc:mysql://db:3306/dmn_coffee?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USER: dmn
+      DB_PASSWORD: ${DB_PASSWORD:?Salin .env.example ke .env dan isi DB_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: dmn_coffee
+      MYSQL_USER: dmn
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Isi DB_PASSWORD di .env}
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    volumes:
+      - menu-data:/var/lib/mysql
+      - ./database/001-menu.sql:/docker-entrypoint-initdb.d/001-menu.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=\"$$MYSQL_PASSWORD\" mysql --user=\"$$MYSQL_USER\" --database=\"$$MYSQL_DATABASE\" --execute='SELECT 1' --silent >/dev/null 2>&1"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 15s
+
+volumes:
+  menu-data:

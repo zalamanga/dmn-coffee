@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a table | DMN Coffeeshop</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer></script>
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <header><h1>DMN Coffeeshop</h1><p>Choose your table, then browse the menu.</p></header>
+    <main class="form-page">
+        <section>
+            <h2>Your table</h2>
+            <p class="demo-note">Local ordering demo. No order or payment is sent to the shop.</p>
+            <p id="storage-error" role="alert" hidden></p>
+            <p id="table-error" role="alert" hidden>Enter a whole table number from 1 to 999.</p>
+            <form id="table-form" action="MenuItemsServlet" method="get">
+                <label for="table-number">Table number</label>
+                <input type="number" id="table-number" name="tableNumber" min="1" max="999" step="1" inputmode="numeric" required>
+                <button type="submit">Browse the menu</button>
+                <p id="loading-message" role="status" hidden>Loading the menu...</p>
+            </form>
+        </section>
+    </main>
+    <footer><p>&copy; 2024 Nugi Nugroho. DMN Coffeeshop project.</p></footer>
+</body>
+</html>

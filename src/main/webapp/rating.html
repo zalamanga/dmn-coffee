@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate the demo | DMN Coffeeshop</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/common.js" defer></script>
+    <script src="js/rating.js" defer></script>
+</head>
+<body>
+    <header><h1>Rate your experience</h1><p class="table-number"></p></header>
+    <main class="form-page">
+        <section>
+            <h2>How was your experience?</h2>
+            <p class="demo-note">Your rating is saved on this browser only. It is not sent to the shop.</p>
+            <p id="storage-error" role="alert" hidden></p>
+            <p id="rating-feedback" role="status" aria-live="polite"></p>
+            <form id="rating-form">
+                <fieldset>
+                    <legend>Choose a rating from 1 to 5</legend>
+                    <div class="rating">
+                        <label><input type="radio" name="rating" value="1" required> 1</label>
+                        <label><input type="radio" name="rating" value="2"> 2</label>
+                        <label><input type="radio" name="rating" value="3"> 3</label>
+                        <label><input type="radio" name="rating" value="4"> 4</label>
+                        <label><input type="radio" name="rating" value="5"> 5</label>
+                    </div>
+                </fieldset>
+                <button id="submit-rating" type="submit">Save rating on this browser</button>
+            </form>
+            <div class="actions"><a class="button secondary" href="cart.html">Back to cart</a><a class="button secondary" id="start-over" href="index.html">Choose another table</a></div>
+        </section>
+    </main>
+    <footer><p>&copy; 2024 Nugi Nugroho. DMN Coffeeshop project.</p></footer>
+</body>
+</html>
