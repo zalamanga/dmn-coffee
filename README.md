@@ -79,6 +79,8 @@ compose.yaml                           Aplikasi dan MySQL
 
 Request menu mengalir dari `index.html` ke `MenuItemsServlet`, lalu JDBC/MySQL dan `WEB-INF/views/menu.jsp`. JSP tidak dibuka langsung agar data selalu disiapkan oleh servlet. Aplikasi memakai namespace `javax.servlet`; gunakan [Tomcat 9 yang mendukung Servlet 4.0 dan JSP 2.3](https://tomcat.apache.org/tomcat-9.0-doc/), bukan Tomcat 10/11 tanpa migrasi ke `jakarta.servlet`.
 
+[Alur kode dan diagram](docs/CODE_FLOW.md) menjelaskan pembacaan menu di server serta keranjang dan rating lokal di browser.
+
 ## Build tanpa Docker
 
 Siapkan JDK 17, Maven 3.9, Tomcat 9, dan MySQL 8.4. Buat database `dmn_coffee`, impor `database/001-menu.sql`, lalu buat pengguna database yang dapat membaca tabel `menu_items`.
