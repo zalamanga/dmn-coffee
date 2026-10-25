@@ -4,6 +4,19 @@ Demo pemesanan menu berdasarkan nomor meja dengan Java Servlet, JSP, dan MySQL. 
 
 **Batas demo:** keranjang dan rating disimpan di `localStorage`. Tidak ada pengiriman pesanan ke kasir, pembayaran, akun pengguna, atau penyimpanan rating ke server. Menu dan harga pada seed SQL adalah contoh untuk mencoba aplikasi.
 
+![Menu DMN Coffee dengan kategori, foto makanan, harga contoh, dan tombol Add to cart](docs/images/menu.png)
+
+*Contoh menu untuk meja 7 pada demo lokal.*
+
+<details>
+<summary>Lihat contoh keranjang</summary>
+
+![Keranjang DMN Coffee berisi dua Bruschetta dan satu French Fries dengan total Rp70.000](docs/images/cart.png)
+
+*Contoh sesi terpisah untuk meja 12. Keranjang tersimpan di browser; tidak ada pesanan atau pembayaran yang dikirim.*
+
+</details>
+
 ## Jalankan dengan Docker
 
 Siapkan Docker Desktop yang mendukung Linux containers dan Docker Compose. Jalankan perintah berikut di PowerShell:
